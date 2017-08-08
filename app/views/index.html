@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Friendability</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <script src="/app.module.js"></script>
+    <script src="/factories/api.factory.js"></script>
+    <script src="/controllers/test.controller.js"></script>
+
+</head>
+<body ng-app="app" ng-controller="TestController as ctrl" ng-cloak>
+
+    <div ng-repeat="username in ctrl.usernames">{{username}}</div>
+
+</body>
+</html>
