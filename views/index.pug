@@ -1,5 +1,54 @@
 extends layout
 
+block styles
+  link(rel='stylesheet', href='/dist/css/main.min.css')
+  link(rel='stylesheet', href='/dist/css/media-queries.min.css')
+  link(rel='stylesheet', href='/dist/css/login.min.css')
+
+block scripts
+  //- script(type='text/javascript', src='/dist/js/init.min.js')
+  script(type='text/javascript', src='/dist/js/mouse-events.min.js')
+  script(type='text/javascript', src='/dist/js/window-events.min.js')
+  script(type='text/javascript', src='/dist/js/login.min.js')
+
 block content
-  h1= title
-  p Welcome to #{title}
+    
+  if user
+    p= user['firstName'] + ' ' + user.lastName
+  if sessionToken
+    //-p= 'Welcome, ' + user.firstName + ' ' + user.lastName + '. Session Token: ' + sessionToken
+
+  img(id='mi', src='/images/frblty.png')
+  div(class='main')
+    span(id='mt', class='main-title')= 'FRIENDABILITY'
+    span(id='ms', class='main-shadow')= 'FRIENDABILITY'
+
+  div(class='sign-in-links')
+    span(id='signup')
+      a(href='/signup')= 'Sign up'
+      span &nbsp;&nbsp;/&nbsp;&nbsp;
+
+    a(onclick='setActive()')= 'Log in'
+    form(id='loginForm', method='POST', action='/', enctype='application/json')
+      input(id='username', name='username' type='text', placeholder='Email', required)
+      input(id='password', name='password' type='password', placeholder='Password', required)
+      input(id='hidPosX', name='posX', type='hidden', required)
+      input(id='hidPosY', name='posY', type='hidden', required)
+      div(class='btn-container')
+        button(type='reset', onclick='setInactive()')= 'Cancel'
+        button(type='submit')= 'Login'
+      
+    //-a(href='/requestPasswordReset')= 'Forgot password'
+    form(id='pwdResetForm', method='POST', action='/requestPasswordReset', enctype='application/json')
+      span= 'Enter your email address on your account. An email will be sent with further instructions.'
+      input(name='email', type='text', placeholder='Email' required)
+      button(type='submit')= 'Request password reset'
+    
+  div(id='legalLinks', class='legal-links')
+    a(href='/terms-of-use')= 'Terms of Use'
+    span &nbsp;&nbsp;/&nbsp;&nbsp;
+    a(href='/privacy-policy')= 'Privacy Policy'
+    span &nbsp;&nbsp;/&nbsp;&nbsp;
+    a(href='mailto:help@thefriendability.com')= 'Contact Us'
+    p(style='text-align: center;')= '© 2017 Friendability'
+

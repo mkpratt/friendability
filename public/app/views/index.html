@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Friendability</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png"> 
+
+    <link rel="stylesheet" href="/dist/css/site.min.css" />
+    <link rel="stylesheet" href="/dist/css/main.min.css" />
+    <link rel="stylesheet" href="/dist/css/media-queries.min.css" />
+    <link rel="stylesheet" href="/dist/css/login.min.css" />
+
+    <script type="text/javascript" src="/dist/js/mouse-events.min.js"></script>
+    <script type="text/javascript" src="/dist/js/window-events.min.js"></script>
+    <script type="text/javascript" src="/dist/js/login.min.js"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+    <!-- <script src="/app.module.js"></script>
+    <script src="/factories/user.factory.js"></script>
+    <script src="/controllers/login.controller.js"></script> -->
+</head>
+<body>
+    <div class="sign-in-links">
+        <span id="signup">
+            <a href="/signup">Sign up</a>
+            &nbsp;/&nbsp;
+        </span>
+        <a onclick="setActive()">Log in</a>
+        <form id="loginForm" method="POST" action="/login" enctype='application/json'>
+            <input id="username" type="text" placeholder="Email" name="username" required />
+            <input id="password" type="password" placeholder="Password" name="password" required />
+            <div class="btn-container">
+                <button type="reset" onclick="setInactive()">Cancel</button>
+                <button type="submit">Log in</button>
+            </div>
+        </form>
+
+        <div style="display: none;">
+            <a href="/requestPasswordReset">Forgot password</a>
+            <form id="pwdResetForm" method="POST" action="/requestPasswordReset" enctype='application/json'>
+                Enter your email address on your account. An email will be sent with further instructions.<br>
+                <input type="text" placeholder="email" name="email" required /><br>
+                <button type="submit">Request Password Reset</button>
+            </form>
+        </div>
+    </div> 
+    <img id="mi" src="/images/frblty.png" />
+    <div class="main">
+        <span id="mt" class="main-title">FRIENDABILITY</span>
+        <span id="ms" class="main-shadow">FRIENDABILITY</span>
+    </div>
+
+    <div id="legalLinks" class="legal-links">
+        <a href="/terms-of-use">Terms of Use</a>
+        &nbsp;/&nbsp;
+        <a href="/privacy-policy">Privacy Policy</a>
+        &nbsp;/&nbsp;
+        <a href="mailto:help@thefriendability.com">Contact Us</a>
+        <p style="text-align: center;">© 2017 Friendability</p>
+    </div>
+
+</body>
+</html>

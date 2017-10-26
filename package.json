@@ -4,20 +4,30 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "stop": "pkill --signal SIGINT ./bin.www"
   },
   "author": "mpkratt",
   "license": "MIT",
   "dependencies": {
     "body-parser": "~1.17.1",
+    "browser-sync": "^2.18.13",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "ejs": "^2.5.7",
     "express": "~4.15.2",
     "express-session": "^1.15.5",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-rename": "^1.2.2",
     "morgan": "~1.8.1",
     "parse": "^1.10.0",
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-uglify": "^3.0.0"
   }
 }

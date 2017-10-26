@@ -1,10 +1,9 @@
+// MAYBE CALL THIS FILE API INSTEAD OF ROUTES
+// ROUTES ARE FOUND IN ROUTES/INDEX.JS
+
 var express = require('express');
 module.exports = function (app) {
     var users = require('../controllers/users');
-
-    //app.use('/static', express.static('./static'));
-    //app.use('/lib', express.static('./lib'));
-
     
     app.get('/', function (req, res) {
         if (req.session.user) {
@@ -51,8 +50,9 @@ module.exports = function (app) {
     // app.post('/signup', users.signup);
     // app.post('/user/update', users.updateUser);
     // app.post('/user/delete', users.deleteUser);
-    // app.post('/login', users.login);
     // app.get('/user/profile', users.getUserProfile);
+    app.post('/', users.logIn);
+    app.post('/requestPasswordReset', users.requestPasswordReset);
 
     app.get('/usernames', users.getUsernames);
 }

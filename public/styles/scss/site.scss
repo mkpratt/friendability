@@ -1,0 +1,53 @@
+@font-face {
+    font-family: Sentinel;
+    font-weight: 400;
+    src: url(/fonts/Sentinel-Book.otf);
+}
+
+@font-face {
+    font-family: Sentinel;
+    font-weight: 500;
+    src: url(/fonts/Sentinel-Semibold.otf);
+}
+
+@font-face {
+    font-family: Sentinel;
+    font-weight: bold;
+    src: url(/fonts/Sentinel-Bold.otf);
+}
+
+* {
+    font-family: Sentinel;
+    font-weight: 500;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden !important;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #7E7E7E;
+
+    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #F1F1F1 100%);
+    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #F1F1F1 100%);
+    background-image: -o-linear-gradient(top, #FFFFFF 0%, #F1F1F1 100%);
+    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #F1F1F1 100%);
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #F1F1F1 100%);
+}
+
+a {
+    text-decoration: none;
+    color: #7E7E7E;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #444;
+}

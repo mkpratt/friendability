@@ -1,0 +1,33 @@
+.main {
+    font-size: 120px;
+    line-height: 0px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 35%;
+
+    .main-title {
+        position: absolute;
+        z-index: 200;
+    }
+
+    .main-shadow {
+        position: absolute;
+        z-index: 100;
+        color: transparent;
+        transform: translate(0px, 24px);
+    }
+}
+
+.sign-in-links {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    text-align: right;
+}
+
+.legal-links {
+    position: absolute; 
+    bottom: 40px; 
+    margin: 10px;
+}
